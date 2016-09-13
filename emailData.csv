@@ -1,0 +1,27 @@
+Date,Time,Rating,Sentiment,Direction,Type
+08/25/2016,11:40 AM,99.345,Positive,rec,statement
+08/25/2016,11:49 PM,99.345,Positive,rec,question
+08/25/2016,1:01 PM,99.9982,Positive,rec,answer
+08/25/2016,4:46 PM,91.3191,Positive,rec,other
+08/25/2016,6:17 PM,97.4816,Positive,rec,statement
+08/25/2016,11:59 PM,98.1055,Positive,rec,statement
+08/26/2016,1:24 PM,99.9669,Negitive,rec,statement
+08/26/2016,2:47 PM,99.9573,Positive,rec,statement
+08/26/2016,3:07 PM,55.3861,Neutral,rec,statement
+08/26/2016,7:10 PM,62.0375,Neutral,rec,statement
+08/26/2016,8:18 PM,95.9259,Positive,rec,statement
+08/27/2016,12:20 AM,50.6877,Neutral,rec,statement
+08/27/2016,3:49 AM,85.4083,Positive,rec,statement
+08/27/2016,7:36 PM,99.9811,Positive,rec,statement
+08/28/2016,7:14 PM,99.4739,Negative,rec,statement
+08/28/2016,7:42 PM,95.4127,Negative,rec,statement
+08/28/2016,7:42 PM,95.4127,Negative,rec,statement
+08/28/2016,8:27 PM,74.5774,Positive,rec,statement
+08/28/2016,8:40 PM,90.0741,Positive,rec,statement
+08/28/2016,11:23 PM,85.3712,Positive,rec,statement
+08/29/2016,1:27 AM,63.2418,Positive,rec,statement
+08/29/2016,1:59 PM,80.1851,Positive,rec,statement
+08/29/2016,2:23 PM,99.6737,Positive,rec,statement
+08/29/2016,3:40 PM,61.5904,Neutral,rec,statement
+08/29/2016,4:27 PM,100,Positive,rec,statement
+08/29/2016,3:48 PM,91.0005,Negative,,statement

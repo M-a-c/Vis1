@@ -1,0 +1,95 @@
+<html>
+	<head>
+		<title>Visualization Project 1</title>
+
+		<!-- JQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+		<!-- D3 -->
+		<script src="http://d3js.org/d3.v4.min.js"></script>
+
+		<!-- Mail visualziation -->
+		<script src="EmailDataExample.js"></script>
+
+
+	<style>
+		.axis {
+		  font: 10px sans-serif;
+		}
+
+		.axis path,
+		.axis line {
+		  fill: none;
+		  stroke: #000;
+		  shape-rendering: crispEdges;
+		}
+	</style>
+
+
+	</head>
+	<body onLoad="EmailDataExample(2);">
+   		<div class="jumbotron vertical-center">
+	 
+	  		<div class="container text-center">
+				<h1>The Data</h1>
+				<div class="row">
+					<h3>Why Email Data?</h3>
+					<p>
+						I collected sentiment, time, intent [question, answer, statement, other] and if an email was sent or received. 
+						I used a website to calculate the sentiment of emails, and referred to my inbox from when I got or sent the emails. 
+						There is a reason I am doing the data based off my email. 
+						I am the president of an organization at UIC and I want to see if there are certain trends in the emails I'm receiving and the ones I'm sending. 
+						This is the first time in my life where email is a big part of my day. I'm curious to see the trends. 
+						Maybe I can dig back to the types of emails I got last year and use the same tool to analyze how this position has changed my daily routine.
+					</p>
+					<hr>
+					<h3>The Data Set</h3>
+					<p>
+						<button onClick="EmailDataExample(11);">10 Emails</button>
+						<button onClick="EmailDataExample(-1);">All Emails</button>
+					</p>
+					<div class="container text-center">
+						<div class="table-responsive text-center">
+							<table class="table text-center" id="ExampleData">
+
+							</table>
+						</div>
+					<div>
+				</div>
+	  		</div>
+
+			<div class="container text-center">
+				<h1>Visualization of Email and Time</h1>
+				<div class="row">
+					<div class="top-bg">
+						<svg id="EmailFreqencyCart"></svg>
+					</div>
+				</div>
+			</div>
+
+			<div class="container text-cen2086221~ter">
+				<h1>Visualization of Sentiment</h1>
+				<div class="row">
+					<div class="top-bg">
+						<svg id="EmailSentimentChart"></svg>
+					</div>
+				</div>
+			</div>
+
+			<div class="container text-center">
+				<h1>Visualization of Frequency</h1>
+				<div class="row">
+					<div class="top-bg">
+						<svg id="EmailTimeChart"></svg>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</body>
+</html>
