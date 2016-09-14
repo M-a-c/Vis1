@@ -3,36 +3,52 @@
 		<title>Visualization Project 1</title>
 
 		<!-- JQuery -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="externalLibs/jquery/jquery.min.js"></script>
 
 		<!-- Bootstrap -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="externalLibs/bootstrap/bootstrap.min.css">
+		<link rel="stylesheet" href="externalLibs/bootstrap/bootstrap-theme.min.css">
+		<script src="externalLibs/bootstrap/bootstrap.min.js"></script>
 
 		<!-- D3 -->
-		<script src="http://d3js.org/d3.v4.min.js"></script>
+		<script src="d3.v4.min.js"></script>
 
 		<!-- Mail visualziation -->
 		<script src="EmailDataExample.js"></script>
+		<script src="EmailTimeChart.js"></script>
 
 
 	<style>
-		.axis {
-		  font: 10px sans-serif;
+		.chart {
+
 		}
 
-		.axis path,
-		.axis line {
-		  fill: none;
-		  stroke: #000;
-		  shape-rendering: crispEdges;
+		.main text {
+		    font: 10px sans-serif;	
 		}
-	</style>
+
+		.axis line{
+			shape-rendering: crispEdges;
+		    stroke: black;
+		    fill: none;
+		}
+
+		.axis path {
+		    shape-rendering: crispEdges;
+		    stroke: black;
+		    fill: none;
+		}
+
+		circle {
+		    fill: steelblue;
+		}
+
+		
+		</style>
 
 
 	</head>
-	<body onLoad="EmailDataExample(2);">
+	<body onLoad="EmailDataExample(2);EmailTimeChart();">
    		<div class="jumbotron vertical-center">
 	 
 	  		<div class="container text-center">
@@ -62,33 +78,15 @@
 					<div>
 				</div>
 	  		</div>
-
+			
 			<div class="container text-center">
 				<h1>Visualization of Email and Time</h1>
 				<div class="row">
-					<div class="top-bg">
-						<svg id="EmailFreqencyCart"></svg>
+					<div id="EmailTimeChart" class="text-canter">
 					</div>
 				</div>
 			</div>
 
-			<div class="container text-cen2086221~ter">
-				<h1>Visualization of Sentiment</h1>
-				<div class="row">
-					<div class="top-bg">
-						<svg id="EmailSentimentChart"></svg>
-					</div>
-				</div>
-			</div>
-
-			<div class="container text-center">
-				<h1>Visualization of Frequency</h1>
-				<div class="row">
-					<div class="top-bg">
-						<svg id="EmailTimeChart"></svg>
-					</div>
-				</div>
-			</div>
 
 		</div>
 	</body>

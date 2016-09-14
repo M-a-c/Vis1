@@ -24,4 +24,4 @@ Date,Time,Rating,Sentiment,Direction,Type
 08/29/2016,2:23 PM,99.6737,Positive,rec,statement
 08/29/2016,3:40 PM,61.5904,Neutral,rec,statement
 08/29/2016,4:27 PM,100,Positive,rec,statement
-08/29/2016,3:48 PM,91.0005,Negative,,statement
+08/29/2016,3:48 PM,91.0005,Negative,rec,statement
