@@ -32,7 +32,7 @@ let EmailTimeChart = () => {
         let times = allRows.map((emailData) => {return findHourTime(emailData[1]);});
         console.log(times);
 
-        d = uniqueDates.map((uniqueDate) => {
+        let d = uniqueDates.map((uniqueDate) => {
             var count = 0;
             var totalTime = 0;
                 allRows.map((emailData) => { 
@@ -53,23 +53,29 @@ let EmailTimeChart = () => {
                 return returnVariable;
 
         });
+
+
+        d = allRows;
     });
+
+
+//https://github.com/d3/d3-scale#scaleTime
 
      data = [[5,3,22], [10,17,4], [15,4,5], [2,8,8]];
 
         let margin = {top: 50, right: 50, bottom: 50, left: 50}
       , width = 960 - margin.left - margin.right
       , height = 500 - margin.top - margin.bottom;
-
+    
     let x = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return d[0]; })])
-        .range([ 0, width ]);
+            .domain([0, d3.max(data, function(d) { return d[0]; })])
+            .range([ 0, width ]);
     
     let y = d3.scaleLinear()
-        .domain([0, d3.max(data, function (d) {
-            return 24;
-        })])
-        .range([height, 0]);
+            .domain([0, d3.max(data, function (d) {
+                return 24;
+            })])
+            .range([height, 0]);
  
 
 
