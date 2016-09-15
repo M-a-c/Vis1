@@ -1,0 +1,15 @@
+I collected sentiment, time, intent [question, answer, statement, other] and if an email was sent or received. I used a website to calculate the sentiment of emails, and referred to my inbox from when i got or sent the emails. There is a reason I am doing the data based off my email. I am the president of an organization at UIC and I want to see if there are certain trends in the emails I’m receiving and the ones I’m sending. This is the first time in my life where email is a big part of my day. I’m curious to see the trends. Maybe I can dig back to the types of emails I got last year and use the same tool to analyze how this position has changed my daily routine.
+ 
+ 
+ 
+The first graph here is to chart the date of email along with the happiness in the email.
+The emails as svg’s should be clickable, and cause the Next graph to change with that day's information being displayed.
+ 
+ (Sketch 1)
+
+
+ This second graph shows the breakdown of individual emails in a day, by type. When a user clicks on its sub data that section will become highlighted and shown on the first chart, exclusively the data of that type. If a user had clicked a specific day, it will then lock to that day and show that data. Resetting the graph is described below.
+
+ (Sketch 2)
+
+ As a side note, clicking anywhere off the graphs will cause all the data to return back to its resting state displaying all days, with all information.
