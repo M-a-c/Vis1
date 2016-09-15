@@ -17,6 +17,9 @@ let findHourTime = (time) => {
 };
 
 let EmailTimeChart = () => {
+
+    var formatTime = d3.timeFormat("%B %d");
+    var uniqueDates = [];
     var data = []
 
     d3.text("emailData.csv", function(emailData) {
@@ -24,25 +27,25 @@ let EmailTimeChart = () => {
         let allRows = d3.csvParseRows(emailData)
             .slice(1, d3.csvParseRows(emailData).lenght);
 
-        let dates = allRows.map((emailData) => {return emailData[0];});
+        let dates = allRows.map((emailData) => {return formatTime(new Date(emailData[0]));});
         console.log(dates);
-        let uniqueDates = Array.from(new Set(dates));
+        uniqueDates = Array.from(new Set(dates));
         console.log(uniqueDates);
         
         let times = allRows.map((emailData) => {return findHourTime(emailData[1]);});
         console.log(times);
 
-        let d = uniqueDates.map((uniqueDate) => {
+        d = uniqueDates.map((uniqueDate) => {
             var count = 0;
             var totalTime = 0;
                 allRows.map((emailData) => { 
-                    if (emailData[0] == uniqueDate) {
+                    if (formatTime(new Date(emailData[0])) == uniqueDate) {
                         count++;
                     }
                 });
                 console.log(count);
                 allRows.map((emailData) => { 
-                    if (emailData[0] == uniqueDate) {
+                    if (formatTime(new Date(emailData[0])) == uniqueDate) {
                         totalTime += findHourTime(emailData[1]);
                     }
                 });
@@ -55,20 +58,22 @@ let EmailTimeChart = () => {
         });
 
 
-        d = allRows;
-    });
+        // d = allRows;
 
 
 //https://github.com/d3/d3-scale#scaleTime
 
-     data = [[5,3,22], [10,17,4], [15,4,5], [2,8,8]];
-
+     // data = [[5,3,22], [10,17,4], [15,4,5], [2,8,8]];
+data = d;
         let margin = {top: 50, right: 50, bottom: 50, left: 50}
       , width = 960 - margin.left - margin.right
       , height = 500 - margin.top - margin.bottom;
     
-    let x = d3.scaleLinear()
-            .domain([0, d3.max(data, function(d) { return d[0]; })])
+    let x = d3.scalePoint()
+            // .domain(["apple", "orange", "banana", "grapefruit"])
+            // .rangePoints([0, width]);
+            .domain(uniqueDates)
+            // .domain([0, d3.max(data, function(d) { return d[0]; })])
             .range([ 0, width ]);
     
     let y = d3.scaleLinear()
@@ -102,6 +107,12 @@ let EmailTimeChart = () => {
         .attr('class', 'EmailGraph axis date')
         .call(xAxis);
 
+    EmailGraph.append("text")
+        .attr("class", "x label")
+        .attr("text-anchor", "end")
+        .attr("x", width)
+        .attr("y", height + 30)
+        .text("Date");
 
 
     // draw the y axis
@@ -114,6 +125,14 @@ let EmailTimeChart = () => {
         .attr('class', 'EmailGraph axis date')
         .call(yAxis);
 
+
+    EmailGraph.append("text")
+        .attr("class", "y label")
+        .attr("text-anchor", "end")
+        .attr("transform", "rotate(-90)")
+        .attr("x", 0)
+        .attr("y", -30)
+        .text("Date");
 
 
     let g = EmailGraph.append("g"); 
@@ -131,5 +150,8 @@ let EmailTimeChart = () => {
     .enter().append("triangle-up")
         .attr("class", "point")
         .attr("transform", function(d) { return "translate(" + x(d[0]) + "," + y(d[1]) + ")"; });
+
+
+});
 
 };
